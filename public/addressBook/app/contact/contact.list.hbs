@@ -1,0 +1,32 @@
+<div class="main-content">
+	<table class="table striped">
+		<thead>
+			<tr>
+				{{#each columns}}
+			    	<th>{{title}}</th>
+			   	{{/each}}
+			</tr>
+		</thead>
+		<tbody>
+			{{#each contacts}}
+			<tr>
+				<td>{{firstName}}</td>
+				<td>{{lastName}}</td>
+				<td>{{email}}</td>
+				<td>{{phone}}</td>
+				<td>{{address}}</td>
+				<td>{{city}}</td>
+				<td>{{state.state}}</td>
+				<td>{{zipCode}}</td>
+				<td>
+					<button class="edit-butt grid-butt btn btn-info" data-id="{{id}}">Edit</button>
+					<button class="delete-butt grid-butt btn btn-danger" data-id="{{id}}">Delete</button>
+				</td>
+			</tr>
+			{{/each}}
+		</tbody>
+	</table>
+	<div class="contact-actions-container">
+		<button class="create-butt btn btn-primary">Create</button>
+	</div>
+</div>

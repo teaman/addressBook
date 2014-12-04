@@ -1,0 +1,76 @@
+<div class="main-content">
+	<div class="contact-header col-sm-offset-2 col-sm-10">
+		<h6>
+			<span class="glyphicon glyphicon-user"></span>
+			<span class="contact-name">New Contact</span>
+		</h6>
+	</div>
+	<div class="form-wrapper">
+		<form class="contact-form form-horizontal" role="form">
+		   <div class="form-group">
+		      <label for="firstname" class="col-sm-2 control-label">First Name</label>
+		      <div class="col-sm-5">
+		         <input type="text" class="form-control" id="lastname" placeholder="Enter First Name" value="{{contact.firstName}}">
+		          </span>
+		      </div>
+		   </div>
+		   <div class="form-group">
+		      <label for="lastname" class="col-sm-2 control-label">Last Name</label>
+		      <div class="col-sm-5">
+		         <input type="text" class="form-control" id="lastname" placeholder="Enter Last Name" value="{{contact.lastName}}">
+		      </div>
+		   </div>
+		   <div class="form-group">
+		      <label for="email" class="col-sm-2 control-label">Email</label>
+		      <div class="col-sm-5">
+		         <input type="text" class="form-control" id="email" value="{{contact.email}}">
+		      </div>
+		   </div>
+		   <div class="form-group">
+		      <label for="phone" class="col-sm-2 control-label">Phone</label>
+		      <div class="col-sm-5">
+		         <input type="text" class="form-control" id="phone" placeholder="Enter Phone Number" value="{{contact.phone}}">
+		      </div>
+		   </div>
+		   <div class="form-group">
+		      <label for="address" class="col-sm-2 control-label">Address</label>
+		      <div class="col-sm-5">
+		         <input type="text" class="form-control" id="address" value="{{contact.address}}">
+		      </div>
+		   </div>
+		   <div class="form-group">
+		      <label for="city" class="col-sm-2 control-label">City</label>
+		      <div class="col-sm-5">
+		         <input type="text" class="form-control" id="city" value="{{contact.city}}">
+		      </div>
+		   </div>
+
+			
+			<div class="dropdown">
+			  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+			    Dropdown
+			    <span class="caret"></span>
+			  </button>
+			  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+			    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
+			    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
+			    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
+			    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
+			  </ul>
+			</div>
+
+		   <div class="form-group">
+		      <label for="zipcode" class="col-sm-2 control-label">Zip Code</label>
+		      <div class="col-sm-5">
+		         <input type="text" class="form-control" id="zipcode" value="{{contact.zipCode}}">
+		      </div>
+		   </div>
+		   <div class="form-group">
+		      <div class="col-sm-offset-2 col-sm-5">
+		         <button class="save-butt btn btn-primary" disabled="disabled">Save</button>
+		         <button class="cancel-butt btn btn-default">Cancel</button>
+		      </div>
+		   </div>
+		</form>
+	</div>
+</div>
