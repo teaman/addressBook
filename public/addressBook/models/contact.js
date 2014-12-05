@@ -26,12 +26,15 @@ define([
       return this.get('/' + id);
     },
 
-    requestCreate: function(data){
-      return this.post('', data, {jsonBody: true});
-    },
-
-    requestUpdate: function(data){
-      return this.put('/' + id, data);
+    requestSave: function(data){
+      console.log(data)
+      console.log(data.id);
+      if(data.id){
+        return this.put('/' + data.id, data);
+      }else{
+        return this.post('', data, {jsonBody: true});
+      }
+      
     },
 
     requestDelete: function(id){

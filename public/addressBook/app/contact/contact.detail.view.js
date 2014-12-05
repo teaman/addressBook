@@ -1,6 +1,7 @@
 define([
-  'vertebrae'
-], function(Vertebrae) {
+  'vertebrae',
+  '../../../libs/viewHelpers'
+], function(Vertebrae, ViewHelpers) {
  
   var ContactDetailView = Vertebrae.View.extend({
 
@@ -16,6 +17,15 @@ define([
     render: function() {
       var data = this.getDelegate().getTemplateProperties();
       this.$el.html(this.renderContent(data));
+    },
+
+    handleSaveButt: function(evt){
+      var formData = this.$el.find('.form-control'),
+          data = {};
+
+      evt.preventDefault();
+      data = ViewHelpers.formToJSON(formData);
+      this.getDelegate().saveContact(data);
     },
 
     handleCancelButt: function(evt){

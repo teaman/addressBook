@@ -19,28 +19,33 @@ define([
 	},
 
 	properties:[
+		'contactId',
 		'contact',
 		'states'
 	],
+
+
+	contact: null,
 
 	start: function(id){
 		// todo: need to handle ids better here and not have a
 		// if statement to chack for the id of null
 
-		State.requestAll()
+		
+
+		return State.requestAll()
 		.bind(this)
 		.then(function(states){
 			this.setStates(states);
+		}).then(function(){
+			if(id){
+				return Contact.requestOne(id)
+				.bind(this)
+				.then(function(contact){
+					this.setContact(contact);
+				});
+			}
 		});
-
-		if(id){
-			return Contact.requestOne(id)
-		    .bind(this)
-		    .then(function(contact){
-		      this.setContact(contact);
-		      this._changeContactName(contact.firstName);
-		    });
-		}
 	},
 
 	viewAvaliable: function(){
@@ -65,9 +70,19 @@ define([
 
 	showContactList: function(){
 		this.getAppController().navigateContactList({trigger: true});
+	},
+
+	saveContact: function(data){
+		Contact.requestSave(data)
+		.bind(this)
+		.then(function(){
+			this.getAppController().navigateContactList({trigger: true});
+		});
 	}
 
   });
+
+	ViewHelpers.initialize();
  
   return ContactDetailController;
 });

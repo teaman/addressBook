@@ -6,11 +6,12 @@
 		</h6>
 	</div>
 	<div class="form-wrapper">
-		<form class="contact-form form-horizontal" role="form">
+		<form id="contact-form" class="contact-form form-horizontal" role="form">
+			<input type="hidden" id="id" class="form-control" value="{{contact.id}}">
 		   <div class="form-group">
 		      <label for="firstname" class="col-sm-2 control-label">First Name</label>
 		      <div class="col-sm-5">
-		         <input type="text" class="form-control" id="lastname" placeholder="Enter First Name" value="{{contact.firstName}}">
+		         <input type="text" class="form-control" id="firstName" placeholder="Enter First Name" value="{{contact.firstName}}">
 		          </span>
 		      </div>
 		   </div>
@@ -44,19 +45,16 @@
 		         <input type="text" class="form-control" id="city" value="{{contact.city}}">
 		      </div>
 		   </div>
-
 			
-			<div class="dropdown">
-			  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
-			    Dropdown
-			    <span class="caret"></span>
-			  </button>
-			  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-			    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
-			    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
-			    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
-			    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
-			  </ul>
+			<div class="form-group">
+				<label for="state" class="col-sm-2 control-label">State</label>
+				<div class="col-sm-5">
+					<select id="stateId" class="form-control">
+					    {{#each states}}
+					    	<option value="{{id}}" {{#if_eq id ../contact.state.id}}selected{{/if_eq}}>{{state}}</option>
+						{{/each}}
+					</select>
+				</div>
 			</div>
 
 		   <div class="form-group">

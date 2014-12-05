@@ -282,7 +282,7 @@ for(var x = 0; x < states.length; x++){
     // returns a list of contacts or a contact
     router.get('/all', function(req, res) {
         States.forge()
-        .fetchAll()
+        .fetch()
         .then(function(states){
             res.send(states);
         }).catch(function(){
